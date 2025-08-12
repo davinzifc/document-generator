@@ -1,0 +1,67 @@
+<h1>test</h1>
+name: <input type="text" [(ngModel)]="this.clientName">
+NIT: <input type="text" [(ngModel)]="this.clientNit">
+CC: <input type="text" [(ngModel)]="this.clientCC">
+Test: <input type="text" [ngModel]="this.ciudadDelReceptor()" (ngModelChange)="this.ciudadDelReceptor.set($event)">
+<button (click)="getalgo()">Get Table HTML</button>
+<p-divider />
+
+
+<div>
+    <h4>CERTIFICADO TRIBUTARIO AG 2024</h4>
+    <p>La empresa <b>{{this.formattedClientEnterpriseName}}</b>, identificada con <b>NIT {{this.formattedClientNit}}</b>,
+certifica que se realizó un pago a la señora <b>{{this.formattedClientName}}</b>, identificada con número de cédula <b>{{this.formattedClientCC}}</b>, en el marco de
+una operación de adquisición de moneda digital (criptoactivo) a través de la
+plataforma Binance.</p>
+
+<p-table
+id="tableTributario"
+    [value]="this.tableConfig().rows"
+    showGridlines
+    [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template #header>
+            <tr>
+                <th>CAMPO</th>
+                <th>DETALLE</th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-rows>
+            <tr>
+                <td><b>{{ rows.name }}</b></td>
+                <td>{{ rows.value }}</td>
+            </tr>
+        </ng-template>
+</p-table>
+</div>
+
+<style>
+    .p-datatable-thead2 > tr > th {
+    padding: 0.75rem 1rem;
+    background:rgb(255, 255, 255);
+    border-color: rgb(226, 232, 240);
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    color: rgb(51, 65, 85);
+    font-weight: 600;
+    text-align: start;
+}
+</style>
+
+<div class="p-datatable-table-container" style="overflow: auto;">
+<table role="table" class="p-datatable-table" id="pn_id_3-table" style="min-width: 50rem;">
+<thead role="rowgroup" class="p-datatable-thead2" style="position: sticky;">
+<tr><th>CAMPO</th><th>DETALLE</th></tr>
+</thead>
+<tbody role="rowgroup" class="p-datatable-tbody">
+<tr><td><b>Ciudad del receptor</b></td><td>test</td></tr>
+<tr><td><b>Fecha del pago</b></td><td>03 de diciembre de 2024</td></tr>
+<tr><td><b>Concepto del pago</b></td><td>Compra de USDT mediante la plataforma Binance</td></tr>
+<tr><td><b>Número de orden de la transacción</b></td><td>22697358257253576704</td></tr>
+<tr><td><b>Cantidad adquirida</b></td><td>4.652,38 USDT</td></tr>
+<tr><td><b>Tasa de cambio aplicada</b></td><td>$4.310,90 COP por USDT</td></tr>
+<tr><td><b>Valor total en pesos colombianos</b></td><td>$20.055.955 COP</td></tr>
+<tr><td><b>¿Se le practicó alguna retención?</b></td><td>No</td></tr>
+</tbody>
+</table>
+</div>
+

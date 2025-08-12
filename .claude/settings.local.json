@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(brew install:*)",
+      "Bash(rm:*)",
+      "Bash(npm run dist:mac:*)",
+      "Bash(npm run dist:win:*)",
+      "Bash(ELECTRON_IS_DEV=false npm run electron)",
+      "Bash(\"./Generador Certificado Tributario\")",
+      "Bash(cp:*)",
+      "Bash(npm run dist:*)",
+      "Bash(PORT=3001 npm start)",
+      "Bash(npm run build:*)"
+    ],
+    "deny": []
+  }
+}
